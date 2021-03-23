@@ -44,7 +44,7 @@
 
  $(function(){
      var IMP = window.IMP; 
-     IMP.init('imp88679730'); 
+     IMP.init('가맹정식별코드'); 
      var msg;
 
  	IMP.request_pay({
