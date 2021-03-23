@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="paymapper">
+  <resultMap type="paydto" id="paymap">
+  	<result property="orderseq" column="ORDERSEQ"/>
+	<result property="projectname" column="PROJECTNAME"/>
+	<result property="projectitemseq" column="PROJECTITEMSEQ"/>
+	<result property="totalprice" column="TOTALPRICE"/>
+	<result property="username" column="USERNAME"/>
+	<result property="address" column="ADDRESS"/>
+	<result property="phone" column="PHONE"/>
+	<result property="orderdate" column="ORDERDATE"/>
+  </resultMap>
+  
+  	<select id="selectList" resultType="paydto">
+  		SELECT PROJECTNAME, TOTALPRICE, USERNAME, ADDRESS, PHONE
+  		FROM ORDERPAGE
+  	</select>
+  
+  	<insert id="insert" parameterType="paydto" >
+  		INSERT INTO ORDERPAGE 
+  		VALUES(#{projectname}, #{totalprice}, #{username}, #{address}, #{phone})
+  	</insert>
+  </mapper>
